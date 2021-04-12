@@ -1,0 +1,112 @@
+@import "buttons";
+@import "colors";
+
+.hero {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  &__content {
+    margin: 0 35px;
+    max-width: 650px;
+
+    h1 {
+      font-size: 40px;
+      line-height: 40px;
+      text-align: center;
+      // text-transform: uppercase;
+      font-weight: 800;
+      color: $blanco;
+    }
+
+    p {
+      text-align: center;
+      color: $gris;
+    }
+  }
+
+  &__buttons {
+    text-align: center;
+    margin-top: 50px;
+    .primary {
+      background-color: $rosado-oscuro;
+      color: $blanco;
+      margin-right: 20px;
+    }
+
+    .secondary {
+      background-color: $celeste;
+      color: #000;
+    }
+  }
+}
+
+.channel {
+  margin-top: 100px;
+  &__content {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    .subtitle {
+      color: $rosado-oscuro;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: $blanco;
+      font-size: 30px;
+      line-height: 30px;
+      // text-transform: uppercase;
+    }
+
+    p {
+      color: $gris;
+    }
+  }
+}
+
+.separator {
+  color: $gris;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+
+  &.superposed {
+    margin-bottom: -22.5px;
+    position: relative;
+    z-index: 2;
+
+    .separator__number {
+      background-color: $azul;
+    }
+  }
+
+  &__number {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    line-height: 16px;
+    font-size: 16px;
+    border: 1px solid $rosado-oscuro;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      background: $rosado-oscuro;
+      position: absolute;
+      height: 70px;
+      width: 1px;
+      top: -70px;
+    }
+  }
+}

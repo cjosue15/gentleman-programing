@@ -1,0 +1,14 @@
+<div class="last-videos">
+  <!-- <ng-container *ngFor="let video of lastVideos">
+    <app-youtube-iframe
+      [title]="video.title"
+      [videoId]="video.videoId"
+    ></app-youtube-iframe>
+  </ng-container> -->
+  <ng-container *ngFor="let video of lastVideos$ | async">
+    <app-youtube-iframe
+      [title]="video.title"
+      [videoId]="video.videoId"
+    ></app-youtube-iframe>
+  </ng-container>
+</div>
