@@ -1,14 +1,22 @@
 <section class="hero">
-  <app-people [isLeft]="true"></app-people>
+  <div class="hero__left">
+    <app-people [isLeft]="true"></app-people>
+  </div>
   <div class="hero__content">
     <h1>Gentleman Programming for Everyone</h1>
-    <p>Si puedes soñarlo, puedes programarlo.</p>
+    <p>
+      "Cada problema es un challenge y no importa el resultado, si lo afrontas,
+      tendrás un beneficio. No tengas miedo, porque la comunidad... estara a tu
+      lado"
+    </p>
     <div class="hero__buttons">
       <button class="primary">Únete a la comunidad</button>
       <button class="secondary">Videos</button>
     </div>
   </div>
-  <app-people></app-people>
+  <div class="hero__right">
+    <app-people></app-people>
+  </div>
 </section>
 <div class="separator">
   <div class="separator__number">01</div>

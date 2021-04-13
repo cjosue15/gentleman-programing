@@ -1,8 +1,9 @@
 @import "colors";
 @import "buttons";
+@import "config";
 
 .footer {
-  height: 250px;
+  min-height: 250px;
   background-image: url("/assets/images/coding.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,9 +14,16 @@
 
   &__content {
     display: grid;
-    grid-template-columns: 300px 1fr auto;
-    align-items: center;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding: 80px 0;
     gap: 50px;
+    text-align: center;
+
+    @include media("lg") {
+      grid-template-columns: 300px 1fr auto;
+      text-align: left;
+    }
 
     & > * {
       position: relative;
@@ -26,12 +34,24 @@
       color: $blanco;
       font-size: 45px;
       line-height: 45px;
+      margin: 0;
+      width: 100%;
+      max-width: 450px;
     }
 
     p {
       color: $blanco;
       font-size: 18px;
       line-height: 25px;
+      margin: 0;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    button {
+      width: 100%;
+      max-width: 200px;
+      background: $celeste;
     }
   }
 

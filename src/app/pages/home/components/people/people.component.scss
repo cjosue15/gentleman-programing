@@ -1,8 +1,23 @@
+@import "config";
+
 .people {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px;
-  gap: 25px;
+  grid-template-columns: 60px 60px 60px;
+  grid-template-rows: 60px 60px;
+  gap: 15px;
+
+  @include media("xs") {
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 80px 80px;
+    gap: 25px;
+  }
+
+  @include media("md") {
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+    gap: 25px;
+  }
+
   .person {
     &.left {
       margin-top: -50px;
@@ -16,9 +31,20 @@
       margin: 0;
       overflow: hidden;
       background-color: #000;
-      width: 100px;
-      height: 100px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
+
+      @include media("xs") {
+        width: 80px;
+        height: 80px;
+      }
+
+      @include media("md") {
+        width: 100px;
+        height: 100px;
+      }
+
       img {
         max-width: 100%;
         vertical-align: middle;

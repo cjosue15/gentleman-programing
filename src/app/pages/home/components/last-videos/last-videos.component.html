@@ -1,14 +1,21 @@
 <div class="last-videos">
-  <!-- <ng-container *ngFor="let video of lastVideos">
-    <app-youtube-iframe
-      [title]="video.title"
-      [videoId]="video.videoId"
-    ></app-youtube-iframe>
-  </ng-container> -->
+  <ng-container *ngIf="lastVideos$ | async as videos; else loadingOrError">
+    <ng-container *ngFor="let video of videos">
+      <app-youtube-iframe
+        [title]="video.title"
+        [videoId]="video.videoId"
+      ></app-youtube-iframe>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #loadingOrError>
+    <p class="error">Ups parece que algo no salio bien, intentalo más tarde.</p>
+  </ng-template>
+  <!--
   <ng-container *ngFor="let video of lastVideos$ | async">
     <app-youtube-iframe
       [title]="video.title"
       [videoId]="video.videoId"
     ></app-youtube-iframe>
-  </ng-container>
+  </ng-container> -->
 </div>
