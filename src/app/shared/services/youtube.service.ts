@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@environment/environment';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { Youtube } from '@core/models';
 
 @Injectable({
@@ -24,6 +24,7 @@ export class YoutubeService {
     };
 
     return this.http.get(this.url, { params }).pipe(
+      first(),
       map((response: any) => {
         const videos = response.items.map(
           (video: any): Youtube => ({
