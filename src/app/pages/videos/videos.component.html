@@ -1,1 +1,27 @@
-<p>videos works!</p>
+<section class="videos">
+  <div class="container">
+    <div class="search">
+      <h1>¿Buscas algun video?, encuentralo aqui abajo 👇</h1>
+      <input type="text" [formControl]="searchInput" />
+    </div>
+    <div class="result-videos">
+      <!-- <ng-container *ngIf="videos$ | async as videos; else loadingOrError"> -->
+      <ng-container *ngIf="videos$ | async as videos">
+        <ng-container *ngFor="let video of videos">
+          <app-youtube-iframe
+            [title]="video.title"
+            [videoId]="video.videoId"
+          ></app-youtube-iframe>
+        </ng-container>
+      </ng-container>
+
+      <app-loading *ngIf="isLoading"></app-loading>
+
+      <!-- <ng-template #loadingOrError>
+        <p class="error">
+          Ups parece que algo no salio bien, intentalo más tarde.
+        </p>
+      </ng-template> -->
+    </div>
+  </div>
+</section>
