@@ -3,7 +3,7 @@
 // MediaQueries From $media
 @mixin media($media) {
   @if $media == xxs {
-    @media (max-width: $breakpoint-xxs - 1) {
+    @media (min-width: $breakpoint-xxs - 1) {
       @content;
     }
   }
