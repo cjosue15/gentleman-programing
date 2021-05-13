@@ -1,22 +1,27 @@
 @import "config";
-
-// .video {
-//   min-height: 25vw;
-// }
+@import "colors";
 
 .video {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  // padding-top: 30px;
-  position: relative;
-}
-.video iframe,
-.video object,
-.video embed {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+  h3 {
+    color: $blanco;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .video-iframe {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    // padding-top: 30px;
+    position: relative;
+  }
+  .video-iframe iframe,
+  .video-iframe object,
+  .video-iframe embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
