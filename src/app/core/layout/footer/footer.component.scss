@@ -32,8 +32,7 @@
 
     h2 {
       color: $blanco;
-      font-size: 45px;
-      line-height: 45px;
+      font-size: clamp(25px, 5vw, 35px);
       margin: 0;
       width: 100%;
       max-width: 450px;
