@@ -1,10 +1,37 @@
-<header>
-  <figure>
-    <img
-      height="100"
-      loading="lazy"
-      src="assets/images/logo.png"
-      alt="Logo Gentleman"
-    />
-  </figure>
+<header class="header" #header>
+  <div class="container">
+    <div class="nav">
+      <a [routerLink]="['/']">
+        <img
+          height="50"
+          loading="lazy"
+          src="assets/images/logo.png"
+          alt="Logo Gentleman"
+        />
+      </a>
+      <div
+        class="nav__hamburguer"
+        [ngClass]="{ open: isOpen }"
+        (click)="openMenu()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav__menu mobile">
+        <ul>
+          <li><a routerLink="/" (click)="openMenu()">Home</a></li>
+          <li><a routerLink="/videos" (click)="openMenu()">Videos</a></li>
+          <li><a (click)="openMenu()">Comunidad</a></li>
+        </ul>
+      </div>
+      <div class="nav__menu desktop">
+        <ul>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/videos">Videos</a></li>
+          <li><a>Comunidad</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </header>
