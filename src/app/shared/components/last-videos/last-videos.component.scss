@@ -14,7 +14,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 .error {
   color: $gris;
   text-align: center;
+  font-size: clamp(16px, 5vw, 20px);
+  grid-row: 1/2;
+  grid-column: 1/3;
 }
