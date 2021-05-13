@@ -3,12 +3,17 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { PeopleComponent } from './components/people/people.component';
 import { HomeComponent } from './home.component';
-import { LastVideosComponent } from './components/last-videos/last-videos.component';
 import { YoutubeIframeModule } from '@shared/components/youtube-iframe/youtube-iframe.module';
+import { LastVideosModule } from '@shared/components/last-videos/last-videos.component.module';
 
 @NgModule({
-  declarations: [PeopleComponent, HomeComponent, LastVideosComponent],
-  imports: [CommonModule, HomeRoutingModule, YoutubeIframeModule],
+  declarations: [PeopleComponent, HomeComponent],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    YoutubeIframeModule,
+    LastVideosModule,
+  ],
   exports: [PeopleComponent],
   providers: [],
 })
