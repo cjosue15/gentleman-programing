@@ -4,8 +4,8 @@ import { VideosRoutingModule } from './videos-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VideosComponent } from './videos.component';
 import { YoutubeIframeModule } from '@shared/components/youtube-iframe/youtube-iframe.module';
-import { AsyncLoadingModule } from '../../shared/pipes/async-loading/async-loading.module';
-import { LoadingModule } from '../../shared/components/loading/loading.module';
+import { LoadingModule } from '@shared/components/loading/loading.module';
+import { LastVideosModule } from '@shared/components/last-videos/last-videos.component.module';
 
 @NgModule({
   declarations: [VideosComponent],
@@ -14,8 +14,8 @@ import { LoadingModule } from '../../shared/components/loading/loading.module';
     VideosRoutingModule,
     ReactiveFormsModule,
     YoutubeIframeModule,
-    AsyncLoadingModule,
     LoadingModule,
+    LastVideosModule,
   ],
   exports: [],
   providers: [],

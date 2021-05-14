@@ -5,7 +5,9 @@
       <input type="text" [formControl]="searchInput" />
     </div>
     <div class="result-videos">
-      <!-- <ng-container *ngIf="videos$ | async as videos; else loadingOrError"> -->
+      <div class="last-videos" *ngIf="!searchInput.value">
+        <app-last-videos></app-last-videos>
+      </div>
       <ng-container *ngIf="videos$ | async as videos">
         <ng-container *ngFor="let video of videos">
           <app-youtube-iframe
@@ -13,15 +15,11 @@
             [videoId]="video.videoId"
           ></app-youtube-iframe>
         </ng-container>
-      </ng-container>
-
-      <app-loading *ngIf="isLoading"></app-loading>
-
-      <!-- <ng-template #loadingOrError>
-        <p class="error">
-          Ups parece que algo no salio bien, intentalo más tarde.
+        <p class="no-results" *ngIf="searchInput.value && videos.length === 0">
+          No hay resultados
         </p>
-      </ng-template> -->
+      </ng-container>
+      <app-loading *ngIf="isLoading"></app-loading>
     </div>
   </div>
 </section>

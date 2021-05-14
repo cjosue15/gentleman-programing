@@ -29,7 +29,7 @@ export class VideosComponent implements OnInit {
 
   ngOnInit(): void {
     this.videos$ = this.searchInput.valueChanges.pipe(
-      debounceTime(2000),
+      debounceTime(1000),
       distinctUntilChanged(),
       tap(() => (this.isLoading = true)),
       switchMap((query: string) =>
@@ -42,10 +42,5 @@ export class VideosComponent implements OnInit {
         )
       )
     );
-  }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
   }
 }
