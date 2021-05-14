@@ -1,8 +1,15 @@
+@import "config";
+
 .main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   &__content {
+    @include mediaBeetwen("md", "lg") {
+      margin-top: 100px;
+    }
+
+    margin-top: 150px;
     flex: 1;
   }
 }
