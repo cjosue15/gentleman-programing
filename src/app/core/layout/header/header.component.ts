@@ -1,4 +1,5 @@
 import { DOCUMENT } from '@angular/common';
+import { environment } from '../../../../environments/environment.prod';
 import {
   Component,
   ElementRef,
@@ -17,10 +18,12 @@ export class HeaderComponent implements OnInit {
   isOpen: boolean = false;
   @ViewChild('header') header: ElementRef;
   lastScrollTop = 0;
+  discordUrl: String;
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2
   ) {
+    this.discordUrl = environment.discordUrl;
     this.header = {} as ElementRef;
   }
 
