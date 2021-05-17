@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     this.document.addEventListener('scroll', () => {
       const scrollTop = this.document.documentElement.scrollTop;
 
-      if (scrollTop > this.lastScrollTop) {
+      if (scrollTop > 0 && scrollTop > this.lastScrollTop) {
         this.renderer.setStyle(this.header.nativeElement, 'top', '-90px');
       } else {
         this.renderer.setStyle(this.header.nativeElement, 'top', '0px');
