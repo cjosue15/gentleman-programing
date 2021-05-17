@@ -88,6 +88,7 @@
       &.mobile {
         display: block;
         position: absolute;
+        background: #141625;
         top: 0;
         left: 0;
         height: 100vh;
@@ -125,7 +126,6 @@
 
       z-index: 10;
       width: 100%;
-      background: #141625;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
       ul {
